@@ -18,25 +18,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# In[2]:
-
-
-#Grab snowflake login
-details = pd.read_csv('details.csv')
-
-user = details['usr'].iloc[0]
-password = details['psw'].iloc[0]
-
-ctx = snowflake.connector.connect(
-    user=user,
-    password=password,
-    account='urbanoutfittersinc.us-central1.gcp',
-    warehouse='BI_WH_PROD',
-    role='RO_ROLE_PROD',
-    database='EDW_PROD'
-    )
-
-
 # ## Reporting Data
 
 # In[36]:
